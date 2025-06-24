@@ -1,0 +1,98 @@
+.teacher-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.teacher-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filters select,
+.dropdown {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .filters {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .filters select {
+    width: 32%;
+  }
+}
+
+.feedback-info {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #34495e;
+}
+
+.download-btn,
+.download-chart-btn,
+.download-pdf-btn {
+  width: 100%;
+  margin-top: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.download-btn:hover:not(:disabled),
+.download-chart-btn:hover,
+.download-pdf-btn:hover {
+  background-color: #0056b3;
+}
+
+.chart-container {
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.no-data {
+  font-size: 16px;
+  color: #999;
+  margin-top: 20px;
+}

@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #1a73e8;
+  --primary-hover: #1557b0;
+  --secondary-color: #34495e;
+  --secondary-hover: #2c3e50;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --text-primary: #202124;
+  --text-secondary: #5f6368;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+}
+
+.login-card {
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: var(--spacing-lg);
+  max-width: 600px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.pdf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: var(--spacing-md);
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.institute-name {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.header-logo {
+  width: 80px;
+  height: auto;
+}
+
+.left-logo {
+  margin-right: 20px;
+}
+
+.right-logo {
+  margin-left: 20px;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.message-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.message-card.success {
+  background: #e6f4ea;
+  color: var(--success-color);
+}
+
+.message-card.error {
+  background: #f8d7da;
+  color: var(--error-color);
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  justify-content: center;
+}
+
+.login-button:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.team-credits {
+  margin-top: var(--spacing-lg);
+  text-align: right;
+}
+
+.created-by {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-members {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    padding: var(--spacing-md);
+  }
+
+  .login-card {
+    max-width: 500px;
+  }
+
+  .pdf-header {
+    padding: 15px 0;
+  }
+
+  .institute-name {
+    font-size: 16px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .header-logo {
+    width: 70px;
+  }
+
+  .left-logo {
+    margin-right: 15px;
+  }
+
+  .right-logo {
+    margin-left: 15px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+
+  .login-card {
+    padding: var(--spacing-md);
+  }
+
+  .created-by {
+    font-size: 13px;
+  }
+
+  .team-members {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    max-width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .pdf-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .header-text {
+    margin: 10px 0;
+  }
+
+  .institute-name {
+    font-size: 14px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-logo {
+    width: 60px;
+  }
+
+  .left-logo, .right-logo {
+    margin: 0;
+  }
+
+  .login-subtitle {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+  }
+
+  .login-button {
+    font-size: 13px;
+  }
+
+  .created-by {
+    font-size: 12px;
+  }
+
+  .team-members {
+    font-size: 11px;
+  }
+
+  .team-credits {
+    text-align: center; /* Center on mobile for better readability */
+  }
+}

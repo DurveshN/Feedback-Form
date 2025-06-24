@@ -1,0 +1,67 @@
+.hod-dashboard {
+    padding: 50px;
+    text-align: center;
+    background: #f5f7fa;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .hod-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 40px;
+  }
+  
+  .hod-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .hod-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .hod-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .hod-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .hod-table th, .hod-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .hod-table th {
+    background-color: #f5f5f5;
+  }
+  
+  .unlink-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .unlink-btn:hover {
+    background-color: #c0392b;
+  }
+  

@@ -1,0 +1,93 @@
+.student-login-dashboard {
+    padding: 40px;
+    text-align: center;
+    background: #f7f9fc;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .student-login-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .student-login-form {
+    margin-bottom: 40px;
+  }
+  
+  .student-login-form input,
+  .student-login-form select {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .student-login-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .student-login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .student-login-message {
+    font-weight: bold;
+    margin-top: 20px;
+    color: green;
+  }
+  
+  .student-login-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .student-login-table th, .student-login-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+  }
+  
+  .student-login-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  

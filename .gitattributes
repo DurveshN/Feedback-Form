@@ -1,0 +1,6 @@
+* text=auto
+     *.js text eol=crlf
+     *.css text eol=crlf
+     *.html text eol=crlf
+     *.json text eol=crlf
+     *.md text eol=crlf
