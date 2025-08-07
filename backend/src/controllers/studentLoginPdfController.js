@@ -15,8 +15,8 @@ exports.generateStudentLoginPDF = async (req, res) => {
     const yearPrefix = yearNum === 2 ? "SE" : yearNum === 3 ? "TE" : "BE";
 
     const existingRes = await pool.query(
-      `SELECT username FROM student_login WHERE department_id = $1 AND year = $2`,
-      [department_id, semester]
+      `SELECT username FROM student_login WHERE department_id = $1 AND year = $2 AND academic_year = $3`,
+      [department_id, semester, academic_year]
     );
     const existingUsernames = new Set(existingRes.rows.map(row => row.username));
 
@@ -129,11 +129,11 @@ exports.generateStudentLoginPDF = async (req, res) => {
 exports.deleteUsedLogins = async (req, res) => {
   try {
     const { department_id } = req.user;
-    const query = `DELETE FROM student_login WHERE department_id = $1 AND used = TRUE`;
+    const query = `DELETE FROM student_login WHERE department_id = $1`;
     await pool.query(query, [department_id]);
-    res.json({ success: true, message: "All used logins deleted" });
+    res.json({ success: true, message: "All logins deleted" });
   } catch (err) {
-    console.error("Error deleting used logins:", err);
+    console.error("Error deleting logins:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };

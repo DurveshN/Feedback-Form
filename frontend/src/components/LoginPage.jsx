@@ -15,6 +15,14 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Check if user is already logged in
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
     if (error) {
       setShake(true);
       const timer = setTimeout(() => setShake(false), 500);

@@ -1,5 +1,5 @@
 // src/App.js
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import StudentFeedbackPage from "./pages/StudentFeedbackPage";
 import TeacherPage from "./pages/TeacherPage";
@@ -13,31 +13,65 @@ import ManageSubjectsPage from "./pages/ManageSubjectsPage";
 import ManageTeachersPage from "./pages/ManageTeachersPage";
 import HodGenerateLoginPage from "./pages/HodGenerateLoginPage";
 import HodFeedbackReportPage from "./pages/HodFeedbackReportPage";
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* 🌟 Common Pages */}
         <Route path="/" element={<LoginPage />} />
         <Route path="/thankyou" element={<ThankYouPage />} />
 
+        {/* 🌟 HOD Routes */}
+        <Route path="/hod" element={
+          <ProtectedRoute allowedRole="hod">
+            <HodPage />
+          </ProtectedRoute>
+        } />
+        <Route path="/hod/*" element={
+          <ProtectedRoute allowedRole="hod">
+            <Routes>
+              <Route path="graphs" element={<HodGraphsPage />} />
+              <Route path="semester-control" element={<HodSemesterControlPage />} />
+              <Route path="teacher-link" element={<HodTeacherSubjectLinkPage />} />
+              <Route path="manage-subjects" element={<ManageSubjectsPage />} />
+              <Route path="generate-login" element={<HodGenerateLoginPage />} />
+              <Route path="manage-teachers" element={<ManageTeachersPage />} />
+              <Route path="feedback-Report" element={<HodFeedbackReportPage />} />
+            </Routes>
+          </ProtectedRoute>
+        } />
+
         {/* 🌟 Student Routes */}
-        <Route path="/student" element={<StudentFeedbackPage />} />
+        <Route path="/student" element={
+          <ProtectedRoute allowedRole="student">
+            <StudentFeedbackPage />
+          </ProtectedRoute>
+        } />
+        <Route path="/student/*" element={
+          <ProtectedRoute allowedRole="student">
+            <Routes>
+              {/* Add student sub-routes here */}
+            </Routes>
+          </ProtectedRoute>
+        } />
 
         {/* 🌟 Teacher Routes */}
-        <Route path="/teacher" element={<TeacherPage />} />
+        <Route path="/teacher" element={
+          <ProtectedRoute allowedRole="teacher">
+            <TeacherPage />
+          </ProtectedRoute>
+        } />
+        <Route path="/teacher/*" element={
+          <ProtectedRoute allowedRole="teacher">
+            <Routes>
+              {/* Add teacher sub-routes here */}
+            </Routes>
+          </ProtectedRoute>
+        } />
 
-        {/* 🌟 HOD Routes */}
-        <Route path="/hod" element={<HodPage />} />
-        <Route path="/hod/semester-control" element={<HodSemesterControlPage />} />
-        <Route path="/hod/teacher-link" element={<HodTeacherSubjectLinkPage />} />
-        <Route path="/hod/graphs" element={<HodGraphsPage />} />
-        <Route path="/hod/student-login" element={<HodStudentLoginPage />} />
-        <Route path="/hod/manage-subjects" element={<ManageSubjectsPage />} />
-        <Route path="/hod/generate-login" element={<HodGenerateLoginPage />} />
-        <Route path="/hod/manage-teachers" element={<ManageTeachersPage />} />
-        <Route path="/hod/feedback-Report" element={<HodFeedbackReportPage />} />
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

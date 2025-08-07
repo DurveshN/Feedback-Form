@@ -155,9 +155,9 @@ const HodGenerateLoginPage = () => {
           <button
             className="danger-button"
             onClick={handleDeleteUsed}
-            title="Delete all used login credentials"
+            title="Delete all login credentials"
           >
-            <FiTrash2 /> Delete All Used Logins
+            <FiTrash2 /> Delete All Logins
           </button>
         </div>
       </div>

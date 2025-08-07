@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FiCalendar, FiCheckCircle, FiXCircle, FiToggleRight } from "react-icons/fi";
+import { FiCalendar, FiCheckCircle, FiXCircle } from "react-icons/fi";
 import "../style/HodSemesterControlPage.css";
 
 const HodSemesterControlPage = () => {
   const [newSemester, setNewSemester] = useState("");
-  const [feedbackOpen, setFeedbackOpen] = useState("");
   const [academicYear, setAcademicYear] = useState("");
   const [message, setMessage] = useState("");
 
@@ -66,36 +65,13 @@ const HodSemesterControlPage = () => {
     }
   };
 
-  const toggleFeedback = async () => {
-    if (!feedbackOpen) {
-      setMessage("Please select feedback status.");
-      return;
-    }
-
-    try {
-      await axios.put(
-        `${process.env.REACT_APP_API_BASE}/api/semester/feedback-toggle`,
-        {
-          feedback_open: feedbackOpen === "true",
-          department_id,
-          hod_id,
-        },
-        { headers: { Authorization: token } }
-      );
-      setMessage("Feedback status updated!");
-    } catch (err) {
-      console.error(err);
-      setMessage("Failed to toggle feedback.");
-    }
-  };
-
   return (
     <div className="semester-control-page">
       <header className="semester-header">
         <h1>
           <FiCalendar className="header-icon" /> Semester Control
         </h1>
-        <p>Manage semester and feedback settings for your department</p>
+        <p>Manage semester settings for your department</p>
       </header>
 
       <div className="semester-container">
@@ -142,30 +118,6 @@ const HodSemesterControlPage = () => {
             title="Update semester and academic year"
           >
             <FiCalendar /> Update Semester
-          </button>
-        </div>
-
-        <div className="semester-card feedback-control-card">
-          <h2>Start/Stop Feedback</h2>
-          <div className="form-group">
-            <label htmlFor="feedback-status">Feedback Status</label>
-            <select
-              id="feedback-status"
-              value={feedbackOpen}
-              onChange={(e) => setFeedbackOpen(e.target.value)}
-              title="Select feedback status"
-            >
-              <option value="">Select Feedback Status</option>
-              <option value="true">Start Feedback</option>
-              <option value="false">Stop Feedback</option>
-            </select>
-          </div>
-          <button
-            className="add-button"
-            onClick={toggleFeedback}
-            title="Toggle feedback status"
-          >
-            <FiToggleRight /> Toggle Feedback
           </button>
         </div>
       </div>
