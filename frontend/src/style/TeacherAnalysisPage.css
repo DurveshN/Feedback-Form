@@ -1,0 +1,174 @@
+/* Teacher Analysis Page – Global layout */
+.teacher-analysis-page {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Header */
+.analysis-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.analysis-header h1 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.analysis-header .header-icon {
+  color: #3b82f6;
+}
+.analysis-header p {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+/* Container for cards */
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Card base style */
+.analysis-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.analysis-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Filter card */
+.filter-card .form-group {
+  margin-bottom: 1rem;
+}
+.filter-card label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #374151;
+}
+.filter-card select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+.filter-card select:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Chart card */
+.chart-card .chart-container {
+  position: relative;
+  height: 400px; /* Increased from 300px to make bar charts bigger */
+  max-width: 100%; /* Ensures responsiveness */
+  margin-bottom: 1rem;
+}
+
+/* Export button */
+.export-button {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.export-button:hover {
+  background: #1d4ed8;
+}
+
+/* Review cards */
+.review-card,
+.overall-review-card {
+  line-height: 1.6;
+}
+.review-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.review-text {
+  margin: 0 0 0.25rem;
+  color: #1f2937;
+}
+.improvement-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #dc2626;
+}
+
+/* Message cards */
+.message-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.message-card.error {
+  background: #fef2f2;
+  color: #dc2626;
+}
+.message-card.success {
+  background: #ecfdf5;
+  color: #15803d;
+}
+
+/* Loading text */
+.loading-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+/* Spinning loader */
+.spinning {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Back button */
+.back-button {
+  margin-top: 2rem;
+  background: #6b7280;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+.back-button:hover {
+  background: #4b5563;
+}

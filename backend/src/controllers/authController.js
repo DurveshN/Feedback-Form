@@ -7,7 +7,7 @@ exports.login = async (req, res) => {
   try {
     const hodQuery = `SELECT id, username, password, department_id, 'hod' AS role FROM hods WHERE username = $1`;
     const teacherQuery = `SELECT id, username, password, 'teacher' AS role FROM teachers WHERE username = $1`;
-    const studentQuery = `SELECT id, username, password, department_id, year, used, academic_year, 'student' AS role FROM student_login WHERE username = $1`;
+    const studentQuery = `SELECT id, username, password, department_id, year, used, academic_year, semester, 'student' AS role FROM student_login WHERE username = $1`;
 
     let user = null;
 
@@ -54,6 +54,7 @@ exports.login = async (req, res) => {
       tokenPayload.year = user.year;
       tokenPayload.username = user.username;
       tokenPayload.academic_year = user.academic_year;
+      tokenPayload.semester = user.semester;
     }
 
     const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, {
@@ -66,6 +67,7 @@ exports.login = async (req, res) => {
       department_id: user.department_id,
       year: user.year,
       academic_year: user.academic_year,
+      semester: user.semester
     });
 
   } catch (error) {

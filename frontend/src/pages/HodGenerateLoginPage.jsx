@@ -126,6 +126,7 @@ const HodGenerateLoginPage = () => {
               title="Select the student year"
             >
               <option value="">Select Student Year</option>
+              <option value="1">1nd Year (FE)</option>
               <option value="2">2nd Year (SE)</option>
               <option value="3">3rd Year (TE)</option>
               <option value="4">4th Year (BE)</option>

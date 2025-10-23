@@ -110,28 +110,6 @@ exports.generateFeedbackPDF = async (req, res) => {
       subject_type,
     ]);
 
-    // Fetch text answers
-    // const textQuery = `
-    //   SELECT q.id, q.text, f.text_answer
-    //   FROM feedback f
-    //   JOIN questions q ON f.question_id = q.id
-    //   JOIN teacher_subjects ts ON f.teacher_subject_id = ts.id
-    //   WHERE f.teacher_subject_id = $1
-    //     AND f.academic_year = $2
-    //     AND ts.year = $3
-    //     AND f.semester = $4
-    //     AND q.type = 'text-answer'
-    //     AND f.text_answer IS NOT NULL
-    //     AND TRIM(f.text_answer) != ''
-    //   ORDER BY q.id, f.id;
-    // `;
-    // const textResult = await pool.query(textQuery, [
-    //   teacher_subject_id,
-    //   academic_year,
-    //   student_year,
-    //   semester,
-    // ]);
-
     // Create PDF
     const pdfDoc = await PDFDocument.create();
     const helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica);

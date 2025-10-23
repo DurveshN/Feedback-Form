@@ -14,6 +14,7 @@ import ManageTeachersPage from "./pages/ManageTeachersPage";
 import HodGenerateLoginPage from "./pages/HodGenerateLoginPage";
 import HodFeedbackReportPage from "./pages/HodFeedbackReportPage";
 import ProtectedRoute from './components/ProtectedRoute';
+import TeacherAnalysisPage from "./pages/TeacherAnalysisPage";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Route path="generate-login" element={<HodGenerateLoginPage />} />
               <Route path="manage-teachers" element={<ManageTeachersPage />} />
               <Route path="feedback-Report" element={<HodFeedbackReportPage />} />
+              <Route path="teacher-analysis" element={<TeacherAnalysisPage />} />
             </Routes>
           </ProtectedRoute>
         } />

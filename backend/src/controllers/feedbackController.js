@@ -17,13 +17,15 @@ exports.getAssignedSubjects = async (req, res) => {
 
       // Derive student year from username prefix (SE -> 2nd year, TE -> 3rd year, BE -> 4th year)
       let studentYear;
-      if (username.startsWith("SE")) {
+      if (username.startsWith("FE")) {
+        studentYear = 1;
+      } else if (username.startsWith("SE")) {
         studentYear = 2;
       } else if (username.startsWith("TE")) {
         studentYear = 3;
       } else if (username.startsWith("BE")) {
         studentYear = 4;
-      } else {
+      }  else {
         return res.status(400).json({
           success: false,
           message: "Invalid username format for student year.",

@@ -138,6 +138,12 @@ const HodPage = () => {
                 <span className="btn-description">Analyze feedback data</span>
               </div>
             </button>
+            <button onClick={() => navigate("/hod/teacher-analysis")} className="workflow-btn">
+              <span className="btn-icon">📊</span>
+              <div className="btn-content">
+                <span className="btn-title">Teacher Analysis</span>
+              </div>
+            </button>
           </div>
         </div>
       </div>
