@@ -13,11 +13,12 @@ const semesterRoutes = require("./src/routes/semesterRoutes");
 const questionRoutes = require("./src/routes/questionRoutes");
 const analyticsRoutes = require("./src/routes/analyticsRoutes");
 const teacherSubjectRoutes = require("./src/routes/teacherSubjectRoutes");
-const studentLoginRoutes = require("./src/routes/studentLoginRoutes");
+// const studentLoginRoutes = require("./src/routes/studentLoginRoutes");
 const teacherAnalyticsRoutes = require("./src/routes/teacherAnalyticsRoutes");
 const subjectRoutes = require("./src/routes/subjectRoutes");
 const studentLoginPdfRoutes = require("./src/routes/studentLoginPdfRoutes");
 const feedbackPdfGeneratorRoutes = require("./src/routes/feedbackPdfGeneratorRoutes");
+const teacherAnalysisRoutes = require('./src/routes/teacherAnalysisRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -36,11 +37,12 @@ app.use("/api/semester", semesterRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/teacher-subjects", teacherSubjectRoutes);
-app.use("/api/student-login", studentLoginRoutes);
+// app.use("/api/student-login", studentLoginRoutes);
 app.use("/api/teacher-analytics", teacherAnalyticsRoutes);
 app.use("/api/hod/subjects", subjectRoutes);
 app.use("/api/student-login", studentLoginPdfRoutes);
 app.use("/api/feedback-generator", feedbackPdfGeneratorRoutes);
+app.use('/api/teacher-analysis', teacherAnalysisRoutes);
 
 // Root Route (To check if the server is running)
 app.get("/", (req, res) => {
